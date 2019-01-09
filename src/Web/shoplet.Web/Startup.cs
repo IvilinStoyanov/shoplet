@@ -13,6 +13,8 @@ using Microsoft.EntityFrameworkCore;
 using shoplet.Web.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using shoplet.Web.Models;
+using shoplet.Web.Areas.Identity.Data;
 
 namespace shoplet.Web
 {
@@ -35,12 +37,12 @@ namespace shoplet.Web
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(
-                    Configuration.GetConnectionString("DefaultConnection")));
-            services.AddDefaultIdentity<IdentityUser>()
-                .AddDefaultUI(UIFramework.Bootstrap4)
-                .AddEntityFrameworkStores<ApplicationDbContext>();
+            services.AddDbContext<ShopletContext>(options =>
+                   options.UseSqlServer(
+                       this.Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDefaultIdentity<ShopletUser>()
+              .AddDefaultUI(UIFramework.Bootstrap4)
+                .AddEntityFrameworkStores<ShopletContext>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
