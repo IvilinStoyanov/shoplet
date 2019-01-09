@@ -10,7 +10,6 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using shoplet.Web.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using shoplet.Web.Models;
@@ -40,7 +39,12 @@ namespace shoplet.Web
             services.AddDbContext<ShopletContext>(options =>
                    options.UseSqlServer(
                        this.Configuration.GetConnectionString("DefaultConnection")));
-            services.AddDefaultIdentity<ShopletUser>()
+            services.AddDefaultIdentity<ShopletUser>(options =>
+            {
+                options.Password.RequireDigit = false;
+                options.Password.RequireUppercase = false;
+                options.Password.RequiredUniqueChars = 0;
+            })
               .AddDefaultUI(UIFramework.Bootstrap4)
                 .AddEntityFrameworkStores<ShopletContext>();
 
