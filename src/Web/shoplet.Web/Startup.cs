@@ -12,8 +12,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using shoplet.Web.Models;
-using shoplet.Web.Areas.Identity.Data;
+using shoplet.Data.Models;
+using shoplet.Data;
 
 namespace shoplet.Web
 {

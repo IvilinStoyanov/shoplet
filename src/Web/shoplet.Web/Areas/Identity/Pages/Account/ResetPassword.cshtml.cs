@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using shoplet.Web.Areas.Identity.Data;
+using shoplet.Data.Models;
 
 namespace shoplet.Web.Areas.Identity.Pages.Account
 {

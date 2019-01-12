@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
-using shoplet.Web.Areas.Identity.Data;
+using shoplet.Data.Models;
 
 namespace shoplet.Web.Areas.Identity.Pages.Account
 {
@@ -56,10 +56,15 @@ namespace shoplet.Web.Areas.Identity.Pages.Account
             [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
             public string ConfirmPassword { get; set; }
 
-            [DataType(DataType.MultilineText)]
-            [Display(Name = "Address")]
-            [Compare("Address", ErrorMessage = "Address is invalid.")]
-            public string Address { get; set; }
+            [DataType(DataType.Text)]
+            [Display(Name = "FirstName")]
+            [Compare("FirstName", ErrorMessage = "Firstname is invalid.")]
+            public string FirstName { get; set; }
+
+            [DataType(DataType.Text)]
+            [Display(Name = "LastName")]
+            [Compare("LastName", ErrorMessage = "Lastname is invalid.")]
+            public string LastName { get; set; }
         }
 
         public void OnGet(string returnUrl = null)
@@ -72,7 +77,13 @@ namespace shoplet.Web.Areas.Identity.Pages.Account
             returnUrl = returnUrl ?? Url.Content("~/");
             if (ModelState.IsValid)
             {
-                var user = new ShopletUser { UserName = Input.Email, Email = Input.Email, Address = Input.Address};
+                var user = new ShopletUser
+                {
+                    UserName = Input.Email,
+                    Email = Input.Email,
+                    FirstName = Input.FirstName,
+                    LastName = Input.LastName
+                };
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)
                 {
