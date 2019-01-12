@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using shoplet.Web.Areas.Identity.Data;
+using shoplet.Data.Models;
 
-namespace shoplet.Web.Models
+namespace shoplet.Data
 {
     public class ShopletContext : IdentityDbContext<ShopletUser>
     {
