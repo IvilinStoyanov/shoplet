@@ -14,6 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\shoplet.Data.Common\shoplet.Data.Common.csproj" />
     <ProjectReference Include="..\shoplet.Data.Models\shoplet.Data.Models.csproj" />
   </ItemGroup>
 

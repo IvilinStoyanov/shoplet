@@ -51,6 +51,9 @@ button.accept-policy {
 .form-container {
     margin: 0 auto;
     background-image: url("/images/registration-form.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     min-width: 850px;
     padding-top: 68px;
     padding-bottom: 48px;

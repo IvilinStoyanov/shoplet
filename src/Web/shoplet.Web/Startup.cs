@@ -14,6 +14,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using shoplet.Data.Models;
 using shoplet.Data;
+using shoplet.Data.Common.Repository.Contracts;
+using shoplet.Data.Repository;
 
 namespace shoplet.Web
 {
@@ -51,6 +53,9 @@ namespace shoplet.Web
                 .AddEntityFrameworkStores<ShopletContext>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+                     
+            // App services
+            services.AddScoped(typeof(IRepository<>), typeof(DbRepository<>));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
