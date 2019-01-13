@@ -57,12 +57,12 @@ namespace shoplet.Web.Areas.Identity.Pages.Account
             public string ConfirmPassword { get; set; }
 
             [DataType(DataType.Text)]
-            [Display(Name = "FirstName")]
+            [Display(Name = "First Name")]
             [Compare("FirstName", ErrorMessage = "Firstname is invalid.")]
             public string FirstName { get; set; }
 
             [DataType(DataType.Text)]
-            [Display(Name = "LastName")]
+            [Display(Name = "Last Name")]
             [Compare("LastName", ErrorMessage = "Lastname is invalid.")]
             public string LastName { get; set; }
         }
