@@ -14,8 +14,11 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using shoplet.Data.Models;
 using shoplet.Data;
+using shoplet.Web.Key;
 using shoplet.Data.Common.Repository.Contracts;
 using shoplet.Data.Repository;
+using Microsoft.AspNetCore.Authentication.Facebook;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace shoplet.Web
 {
@@ -53,6 +56,13 @@ namespace shoplet.Web
                 .AddEntityFrameworkStores<ShopletContext>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddAuthentication(
+            )
+                .AddFacebook(options =>
+                {            
+                    options.AppId = Keys.appId;
+                    options.AppSecret = Keys.appSec;
+                });
                      
             // App services
             services.AddScoped(typeof(IRepository<>), typeof(DbRepository<>));
