@@ -3,8 +3,8 @@ using System.Threading.Tasks;
 
 namespace shoplet.Data.Common.Repository.Contracts
 {
-   public interface IRepository<TEntity>
-        where TEntity : class
+    public interface IRepository<TEntity>
+          where TEntity : class
     {
         IQueryable<TEntity> All();
 
