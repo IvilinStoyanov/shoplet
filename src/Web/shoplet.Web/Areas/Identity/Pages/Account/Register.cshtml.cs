@@ -41,6 +41,13 @@ namespace shoplet.Web.Areas.Identity.Pages.Account
         public class InputModel
         {
             [Required]
+            [DataType(DataType.Text)]
+            [Display(Name = "Username")]
+            [Compare("Username", ErrorMessage = "Username is invalid.")]
+            public string Username { get; set; }
+
+
+            [Required]
             [EmailAddress]
             [Display(Name = "Email")]
             public string Email { get; set; }
@@ -79,7 +86,7 @@ namespace shoplet.Web.Areas.Identity.Pages.Account
             {
                 var user = new ShopletUser
                 {
-                    UserName = Input.Email,
+                    UserName = Input.Username,
                     Email = Input.Email,
                     FirstName = Input.FirstName,
                     LastName = Input.LastName
