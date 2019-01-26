@@ -15,15 +15,6 @@ a.navbar-brand {
 
 /* Sticky footer styles
 -------------------------------------------------- */
-html {
-    font-size: 14px;
-}
-
-@media (min-width: 768px) {
-    html {
-        font-size: 16px;
-    }
-}
 
 .border-top {
     border-top: 1px solid #e5e5e5;
@@ -45,7 +36,7 @@ button.accept-policy {
 /*Forms*/
 
 .row-form {
-    margin-top: 50px;
+    margin-top: 0px;
 }
 
 .form-container {
@@ -89,28 +80,4 @@ button.accept-policy {
 
 .form-group-inline {
  display: flex;
-}
-
-
-/* Sticky footer styles
--------------------------------------------------- */
-html {
-    position: relative;
-    min-height: 100%;
-}
-
-body {
-    /* Margin bottom by footer height */
-    margin-bottom: 60px;
-}
-
-.footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    background-color: #FFF;
-    white-space: nowrap;
-    /* Set the fixed height of the footer here */
-    height: 60px;
-    line-height: 60px; /* Vertically center the text there */
 }
